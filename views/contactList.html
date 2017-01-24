@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>First angular app</title>
+      <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+   </head>
+      <body ng-app="appName">
+               <div ng-controller="contactListCtrl">
+         
+   <!--      <div ng-include="'/views/contactListForm.html'"></div>   --> 
+           <contact-list-form></contact-list-form>
+           <contact-list-update updateid="updateId"></contact-list-update>
+           <contact-list-table></contact-list-table>  
+            
+         <!--   <table class="table table-striped">a
+               <caption>
+                  Results
+                  <input style="float:right;margin-right:20px" type="text" ng-model="searchMd" placeholder="Search...">
+                  
+               </caption>  -->
+               <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th></th>
+               </tr>
+               <tr ng-repeat="x in contactList|filter:searchMd">
+                  <td>{{x.firstName}}</td>
+                  <td>{{x.lastName}}</td>
+                  <td>{{x.address}}</td>
+                  <td>{{x.phoneNumber}}</td>
+                  <td>{{x.email}}</td>
+                  <td>
+                     <button class="btn btn-primary"ng-click="update(x.contactId)">Update</button>
+                     <button class="btn btn-danger"ng-click="update(x.contactId)">Delete</button>
+                  </td>
+               </tr>
+
+            </table>
+
+            
+      <!--      <h1>Results</h1>
+            <ol>
+               <li ng-repeat="x in contactList">{{x.lastName}}</li>
+            
+            </ol>  -->
+         </div>
+         By Element
+         <contact-list-form></contact-list-form>
+         By Attribute
+         <div contact-list-form></div>
+         By Class
+         <span class="contact-list-form"></span>
+      </body>
+   <script type="text/javascript" src="/node_modules/angular/angular.js"></script>
+   <script type="text/javascript" src="/scripts/app.js"></script>
+   <script type="text/javascript" src="/scripts/controllers/appCtrl.js"></script>
+   <script type="text/javascript" src="/scripts/services/personService.js"></script>
+   <script type="text/javascript" src="/scripts/controllers/personCtrl.js"></script>
+   <script type="text/javascript" src="/scripts/services/personFactory.js"></script>
+   <script type="text/javascript" src="/scripts/controllers/contactListCtrl.js"></script>
+   <script type="text/javascript" src="/scripts/directives/contactListForm.js"></script>
+   <script type="text/javascript" src="/scripts/services/personHttp.js"></script>
+   <script type="text/javascript" src="/scripts/directives/contactListFormEdit.js"></script>
+</html>
