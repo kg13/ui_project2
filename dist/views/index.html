@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>First angular app</title>
+      <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+   </head>
+      <body ng-app="appName">
+         <div ng-controller="appCtrl">
+            <h1>One way data binding</h1>
+            <h3>{{::title}}</h3>
+            
+            <h1>Two way data binding</h1>
+            <h3>{{title}}</h3>
+            
+            <button class="btn btn-primary" ng-click="change()">Change</button>
+            <br>
+            <h1>Form element</h1>
+            <input type="text" ng-model="forModal">
+            {{forModal}}
+            <br>
+            <button class="btn btn-danger" ng-click="displayPerson()">appCtrl</button>
+         </div>
+         
+         <div ng-controller="personCtrl">
+            <h3>Test</h3>
+            <button class="btn btn-success"ng-click="initialze()">personCtrl</button>
+            
+         </div>
+         
+      </body>
+   <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+   <script type="text/javascript" src="../scripts/app.js"></script>
+   <script type="text/javascript" src="../scripts/controllers/appCtrl.js"></script>
+   <script type="text/javascript" src="../scripts/services/personService.js"></script>
+   <script type="text/javascript" src="../scripts/controllers/personCtrl.js"></script>
+
+</html>

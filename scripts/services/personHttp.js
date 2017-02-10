@@ -13,7 +13,7 @@ angular.module("appName").service("personHttp",["$http",function($http){
    this.getPersonList = function(dataParam){
       return $http({
          method:"POST",
-         url:"/serivice/contactinfo"
+         url:"/serivice/contactinfo",
          data:dataParam
       }).then(function(result){
          return result.status;
@@ -23,7 +23,7 @@ angular.module("appName").service("personHttp",["$http",function($http){
    this.deletePersonList = function(dataParam){
       return $http({
          method:"DELETE",
-         url:"/serivice/contactinfo"
+         url:"/serivice/contactinfo",
          data:dataParam
       }).then(function(result){
          return result.status;

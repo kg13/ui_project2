@@ -15,7 +15,7 @@ angular.module("appName").directive("contactListUpdate",["personHttp",function(p
       	};
 
       },
-      templateUrl:"/views/contactListForm.html",
+      templateUrl: "/views/contactListForm.html",
       link:function(scope,element,attr){
       	
       			if (newVal=0) {
@@ -24,7 +24,7 @@ angular.module("appName").directive("contactListUpdate",["personHttp",function(p
 
       			})
       		}
-      		})
+      		}
 
       		// console.log("Displaying attribute");
       		// console.log(attr.updateid);
@@ -36,5 +36,5 @@ angular.module("appName").directive("contactListUpdate",["personHttp",function(p
 
       }
       
-   }
+
 }]);
